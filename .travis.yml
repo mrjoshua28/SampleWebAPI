@@ -6,3 +6,9 @@ install:
 script:
   - xbuild /p:Configuration=Release /p:TargetFrameworkVersion="v4.5.1" SampleWebAPI.sln
   - mono ./testrunner/NUnit.ConsoleRunner.3.4.1/tools/nunit3-console.exe ./SampleWebAPITests/bin/Release/SampleWebAPITests.dll
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"  
+  app: "precision-exercise"
+  env: "PrecisionExercise-env"
+  bucket_name: "elasticbeanstalk-us-east-2-313351356709"
