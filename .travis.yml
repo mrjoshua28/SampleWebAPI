@@ -4,7 +4,7 @@ install:
   - nuget restore SampleWebAPI.sln
   - nuget install NUnit.Runners -Version 3.4.1 -OutputDirectory testrunner
 script:
-  - msbuild /p:Configuration=Release /p:TargetFrameworkVersion="v4.5.1" /p:DeployIisAppPath="Default Web Site" /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:PackageLocation="package.zip" SampleWebAPI.sln
+  - msbuild /p:Configuration=Release /p:TargetFrameworkVersion="v4.5.1" /p:DeployIisAppPath="Default Web Site" /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:PackageLocation="/home/travis/build/mrjoshua28/SampleWebAPI/package.zip" SampleWebAPI.sln
   - mono ./testrunner/NUnit.ConsoleRunner.3.4.1/tools/nunit3-console.exe ./SampleWebAPITests/bin/Release/SampleWebAPITests.dll
 #before_deploy: "cd SampleWebAPI/bin; zip -r package.zip . *"  
 deploy:
