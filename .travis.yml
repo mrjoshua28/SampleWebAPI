@@ -7,7 +7,7 @@ script:
   - msbuild /p:Configuration=Release /p:TargetFrameworkVersion="v4.5.1" /p:DeployIisAppPath="Default Web Site" SampleWebAPI.sln
   - mono ./testrunner/NUnit.ConsoleRunner.3.4.1/tools/nunit3-console.exe ./SampleWebAPITests/bin/Release/SampleWebAPITests.dll
   #- msbuild /t:Package /p:Configuration=Release /p:TargetFrameworkVersion="v4.5.1" /p:DeployIisAppPath="Default Web Site" ./SampleWebAPI/SampleWebAPI.csproj
-before_deploy: "cd SampleWebApi/bin/Release; zip -r ../../../package.zip"  
+before_deploy: "cd bin/Release; zip -r ../../package.zip"  
 deploy:
   skip_cleanup: true
   zip_file: "package.zip"
