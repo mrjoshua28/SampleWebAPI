@@ -2,15 +2,15 @@
 
 I'm really glad you're reading this, because we need volunteer developers to help this project come to fruition.
 
-If you haven't already, come find us in IRC ([#opengovernment](irc://chat.freenode.net/opengovernment) on freenode). We want you working on things you're excited about.
+If you haven't already, come find us `wherever`. We want you working on things you're excited about.
 
 ## Testing
 
-We have a gang of NUnit tests. Please write NUnit tests for new code you create.
+We have a gang of NUnit tests. Please write NUnit tests for new code you create. Tests are automatically triggered for all commits using the `SampleWebAPITests` project.
 
 ## Submitting changes
 
-Please send a [GitHub Pull Request to SampleWebAPI](https://github.com/mrjoshua28/SampleWebAPI/pull/new/master) with a clear list of what you've done (read more about [pull requests](http://help.github.com/pull-requests/)). When you send a pull request, we will love you forever if you include NUnit tests. We can always use more test coverage. Builds are automatically triggered for all commits using the `SampleWebAPITests` project. Please follow our coding conventions (below) and make sure all of your commits are atomic (one feature per commit).
+Please send a [GitHub Pull Request to SampleWebAPI](https://github.com/mrjoshua28/SampleWebAPI/pull/new/master) with a clear list of what you've done (read more about [pull requests](http://help.github.com/pull-requests/)). When you send a pull request, we will love you forever if you include NUnit tests. We can always use more test coverage. Please follow our coding conventions (below) and make sure all of your commits are atomic. Feature branches are the heat.
 
 Always write a clear log message for your commits. One-line messages are fine for small changes, but bigger changes should look like this:
 
