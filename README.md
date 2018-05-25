@@ -24,6 +24,10 @@ Sample Build Output:
 
 ![Travis Test Output](static/travis-test.png)
 
+Build statuses are integrated into GitHub. Here's what it looks like when you submit a Pull Request:
+
+![Build Status](static/merging.png)
+
 I decided to use [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/) to deploy the API, mainly because it's the only free-tier service I have left to use. The premise is that I can just give it the packaged up application and it will take it from there. LIES! Here's where I have attempted to deploy:
 
 [Elastic Beanstalk URL](http://precisionexercise-env.kkxcvkqyhr.us-east-2.elasticbeanstalk.com/) - DOES NOT WORK
