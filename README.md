@@ -4,6 +4,22 @@
 
 A small sample web api with tests, for playing around with CI tools. And MUCH MORE!
 
+## How This Works
+
+[Travis](https://www.travis-ci.com/) is watching... Travis integration has been installed. See [travis.yml](https://github.com/mrjoshua28/SampleWebAPI/blob/master/.travis.yml) for all the details.
+
+Basially this is what's happening:
+
+1. When a push is made to the repo, Travis builds the project and runs the tests.
+
+2. When a Pull Request is created, Travis builds the project and runs the tests.
+
+3. When a merge is made into Master, Travis builds the project and runs the tests.
+
+4. When a merge is made into Master, Travis will package up the artifacts from the build and deploy to Elastic Beanstalk in AWS.
+
+[URL](http://precisionexercise-env.kkxcvkqyhr.us-east-2.elasticbeanstalk.com/) - DOES NOT WORK
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -66,7 +82,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/mrjoshua28/SampleWebAPI/blob/contrib/CONTRIBUTING.md) for the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/mrjoshua28/SampleWebAPI/blob/master/CONTRIBUTING.md) for the process for submitting pull requests to us.
 
 ## Versioning
 
