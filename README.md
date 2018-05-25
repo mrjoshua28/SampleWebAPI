@@ -6,73 +6,37 @@ A small sample web api with tests, for playing around with CI tools. And MUCH MO
 
 ## How This Works
 
-[Travis](https://www.travis-ci.com/) is watching... Travis integration has been installed. See [travis.yml](https://github.com/mrjoshua28/SampleWebAPI/blob/master/.travis.yml) for all the details.
+[Travis](https://www.travis-ci.com/) is watching... Travis integration has been installed. See [travis.yml](https://github.com/mrjoshua28/SampleWebAPI/blob/master/.travis.yml) for all the gory details.
+
+Travis Settings:
+
+![Travis Configuration](static/travis-settings.png)
 
 Basially this is what's happening:
 
-1. When a push is made to the repo, Travis builds the project and runs the tests.
+1. When a push is made to the repo: Travis builds the project and runs the tests.
 
-2. When a Pull Request is created, Travis builds the project and runs the tests.
+2. When a Pull Request is created: Travis builds the project and runs the tests.
 
-3. When a merge is made into Master, Travis builds the project and runs the tests.
+3. When a merge is made into Master: Travis builds the project and runs the tests. Travis will also package up the artifacts from the build and deploy to Elastic Beanstalk in AWS.
 
-4. When a merge is made into Master, Travis will package up the artifacts from the build and deploy to Elastic Beanstalk in AWS.
+Sample Build Output:
 
-[URL](http://precisionexercise-env.kkxcvkqyhr.us-east-2.elasticbeanstalk.com/) - DOES NOT WORK
+![Travis Test Output](static/travis-test.png)
 
-## Getting Started
+Build statuses are integrated into GitHub. Here's what it looks like when you submit a Pull Request:
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+![Build Status](static/merging.png)
 
-### Prerequisites
+I decided to use [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/) to deploy the API, mainly because it's the only free-tier service I have left to use. The premise is that I can just give it the packaged up application and it will take it from there. LIES! Here's where I have attempted to deploy:
 
-What things you need to install the software and how to install them
+[Elastic Beanstalk URL](http://precisionexercise-env.kkxcvkqyhr.us-east-2.elasticbeanstalk.com/) - DOES NOT WORK
 
-```
-Give examples
-```
+I seem to not be able to get the files packaged into a format that AWS likes. I am currently zipping up the Release build artifacts, but that doesn't seem to be working.
 
-### Installing
+According to this [AWS Documentation](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-sourcebundle.html#using-features.deployment.source.dotnet) I should be able to do something like `msbuild <web_app>.csproj /t:Package /p:DeployIisAppPath="Default Web Site"`. However, when I try that I am presented with an error that there is no build target named `Package`. I'm assuming I need to create one in Visual Studio, or give up and deploy to Azure
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+![Elastic Beanstalk Environment](static/aws-env.png)
 
 ## Built With
 
@@ -84,10 +48,6 @@ Add additional notes about how to deploy this on a live system
 
 Please read [CONTRIBUTING.md](https://github.com/mrjoshua28/SampleWebAPI/blob/master/CONTRIBUTING.md) for the process for submitting pull requests to us.
 
-## Versioning
-
-Explain versioning
-
 ## License
 
-This project is licensed under the ??? License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

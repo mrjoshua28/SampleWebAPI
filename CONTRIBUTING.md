@@ -2,8 +2,6 @@
 
 I'm really glad you're reading this, because we need volunteer developers to help this project come to fruition.
 
-If you haven't already, come find us `wherever`. We want you working on things you're excited about.
-
 ## Testing
 
 We have a gang of NUnit tests. Please write NUnit tests for new code you create. Tests are automatically triggered for all commits using the `SampleWebAPITests` project.
