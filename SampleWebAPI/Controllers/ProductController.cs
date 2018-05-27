@@ -41,7 +41,7 @@ namespace SampleWebAPI.Controllers
 			new Product
             {
                 Id = 5,
-                Name = "Test Widget",
+                Name = "Super Great Widget",
                 Description = "What doesn't it do?!"
             }
         };
