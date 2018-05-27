@@ -6,16 +6,18 @@ install:
 script:
   - msbuild /p:Configuration=Release /p:TargetFrameworkVersion="v4.5.1" SampleWebAPI.sln
   - mono ./testrunner/NUnit.ConsoleRunner.3.4.1/tools/nunit3-console.exe ./SampleWebAPITests/bin/Release/SampleWebAPITests.dll
-before_deploy: "cd SampleWebAPI/bin; zip -r package.zip . *"  
+#before_deploy: "cd SampleWebAPI/bin; zip -r package.zip . *"  
 deploy:
-  skip_cleanup: true
-  zip_file: "package.zip"
-  provider: elasticbeanstalk
-  region: "us-east-2"  
-  app: "precision-exercise"
-  env: "PrecisionExercise-env"
-  bucket_name: "elasticbeanstalk-us-east-2-313351356709"
-  access_key_id: $ACCESS_KEY_ID
-  secret_access_key: $SECRET_ACCESS_KEY
   on:
     branch: master
+  skip_cleanup: true
+  provider: azure_web_apps
+  #zip_file: "package.zip"
+  #provider: elasticbeanstalk
+  #region: "us-east-2"  
+  #app: "precision-exercise"
+  #env: "PrecisionExercise-env"
+  #bucket_name: "elasticbeanstalk-us-east-2-313351356709"
+  #access_key_id: $ACCESS_KEY_ID
+  #secret_access_key: $SECRET_ACCESS_KEY
+  
