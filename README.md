@@ -56,6 +56,24 @@ deploy:
     branch: master
 ```
 
+## UPDATE - Working with Azure
+
+I finally gave up trying to get it to work in Elastic Beanstalk and switched to azure.
+
+[SampleWebAPI Deployment URL](https://precisionexercise.azurewebsites.net/api/Product)
+
+Pretty much the exact same idea as the previous, just changed it to deploy to an Azure Web App.
+
+![Azure Resource Details](static/azure-resource.png)
+
+Had to create some Deployment Credentials:
+
+![Azure Deployment Credentials](static/azure-creds.png)
+
+As well as add the repository to the Deployment Options:
+
+![Azure Deployment Options](static/azure-options.png)
+
 ## Built With
 
 * [Visual Studio](https://www.visualstudio.com/) - Good luck not using it!
