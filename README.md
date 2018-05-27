@@ -38,6 +38,24 @@ According to this [AWS Documentation](https://docs.aws.amazon.com/elasticbeansta
 
 ![Elastic Beanstalk Environment](static/aws-env.png)
 
+Here what the `.travis.yml` config looks like for Elastic Beanstalk:
+
+``` yaml
+before_deploy: "cd SampleWebAPI/bin; zip -r package.zip . *"  
+deploy:
+  skip_cleanup: true
+  zip_file: "package.zip"
+  provider: elasticbeanstalk
+  region: "us-east-2"  
+  app: "precision-exercise"
+  env: "PrecisionExercise-env"
+  bucket_name: "elasticbeanstalk-us-east-2-313351356709"
+  access_key_id: $ACCESS_KEY_ID
+  secret_access_key: $SECRET_ACCESS_KEY
+  on:
+    branch: master
+```
+
 ## Built With
 
 * [Visual Studio](https://www.visualstudio.com/) - Good luck not using it!
