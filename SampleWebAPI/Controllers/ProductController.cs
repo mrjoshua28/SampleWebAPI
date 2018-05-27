@@ -37,6 +37,12 @@ namespace SampleWebAPI.Controllers
                 Id = 4,
                 Name = "Pasta Maker",
                 Description = "It doesn't toast, but make a killer spagetti"
+            },
+			new Product
+            {
+                Id = 5,
+                Name = "Test Widget",
+                Description = "What doesn't it do?!"
             }
         };
 
