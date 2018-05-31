@@ -9,7 +9,7 @@ script:
 #before_deploy: "cd SampleWebAPI/bin; zip -r package.zip . *"  
 deploy:
   on:
-    branch: master
+    branch: staging
   skip_cleanup: true
   provider: azure_web_apps
   #zip_file: "package.zip"
